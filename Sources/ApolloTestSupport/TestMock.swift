@@ -195,6 +195,9 @@ fileprivate extension Array {
     case let element as any AnyMock:
       return element._selectionSetMockData as JSONValue
 
+    case let element as JSONValue:
+      return element
+
     case let innerArray as Array<Any>:
       return innerArray._unsafelyConvertToSelectionSetData() as JSONValue
 
